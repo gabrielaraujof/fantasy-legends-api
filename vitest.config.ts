@@ -16,7 +16,9 @@ export default defineConfig({
   },
   plugins: [
     swc.vite({
-      module: { type: 'es6' },
+      module: {
+        type: 'es6',
+      },
     }),
   ],
 });
