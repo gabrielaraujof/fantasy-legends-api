@@ -8,6 +8,9 @@ export default defineConfig({
     alias: {
       '@': './src',
     },
+    coverage: {
+      reporter: ['lcov'],
+    },
   },
   resolve: {
     alias: {
