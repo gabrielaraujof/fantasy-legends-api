@@ -1,0 +1,24 @@
+service: fantasy-legends
+
+plugins:
+  - serverless-dotenv-plugin
+  - serverless-offline
+
+useDotenv: true
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  environment:
+    GRAPHQL_PLAYGROUND_ENABLED: ${env:GRAPHQL_PLAYGROUND_ENABLED}
+
+functions:
+  api:
+    handler: dist/serverless.handler
+    events:
+      - http:
+          method: ANY
+          path: /
+      - http:
+          method: ANY
+          path: '{proxy+}'
