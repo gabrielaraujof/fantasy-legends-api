@@ -15,6 +15,8 @@ provider:
 functions:
   api:
     handler: dist/serverless.handler
+    url: true
+    description: Fantasy of Legends GraphQL API
     events:
       - http:
           method: ANY
