@@ -20,8 +20,7 @@
     "test:e2e": "vitest run --config ./test/vitest.config.e2e.ts",
     "offline": "serverless offline --noPrependStageInUrl",
     "preoffline": "nest build",
-    "deploy:dev": "serverless deploy --noPrependStageInUrl",
-    "deploy": "serverless deploy --stage production --noPrependStageInUrl"
+    "deploy": "serverless deploy"
   },
   "dependencies": {
     "@apollo/server": "^4.7.5",
