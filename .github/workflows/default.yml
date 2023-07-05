@@ -86,4 +86,4 @@ jobs:
           aws-region: us-east-1
 
       - name: Deploy serverless to AWS Lambda
-        run: npm run deploy -- --noPrependStageInUrl
+        run: npm run deploy:dev
