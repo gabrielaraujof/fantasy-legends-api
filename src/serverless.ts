@@ -7,6 +7,7 @@ let server: Handler;
 
 async function bootstrap(): Promise<Handler> {
   const app = await createApp();
+  app.init();
   const fastifyApp = app.getHttpAdapter().getInstance();
   return awsLambdaFastify(fastifyApp as any);
 }

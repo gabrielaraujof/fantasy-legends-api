@@ -11,7 +11,12 @@ import { AppModule } from './app.module';
 export const createApp = async () => {
   const app = await NestFactory.create<
     NestFastifyApplication<RawServerDefault>
-  >(AppModule, new FastifyAdapter());
+  >(
+    AppModule,
+    new FastifyAdapter({
+      logger: true,
+    }),
+  );
 
   return app;
 };

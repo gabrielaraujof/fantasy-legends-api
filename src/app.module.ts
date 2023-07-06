@@ -14,11 +14,15 @@ import { AppService } from './app.service';
       isGlobal: true,
       load: [graphQLConfig],
     }),
-    GraphQLModule.forRoot<ApolloDriverConfig>({
+    GraphQLModule.forRootAsync<ApolloDriverConfig>({
+      imports: [ConfigModule],
       driver: ApolloDriver,
-      playground: true,
-      autoSchemaFile: true,
-      sortSchema: true,
+      useFactory: (config: ConfigType<typeof graphQLConfig>) => ({
+        playground: config.playgroundEnabled,
+        autoSchemaFile: true,
+        sortSchema: true,
+      }),
+      inject: [graphQLConfig.KEY],
     }),
   ],
   providers: [AppService, AppResolver],
