@@ -7,6 +7,7 @@ import { graphQLConfig } from '@/config';
 
 import { AppResolver } from './app.resolver';
 import { AppService } from './app.service';
+import { LineupModule } from './lineup/lineup.module';
 
 @Module({
   imports: [
@@ -24,6 +25,7 @@ import { AppService } from './app.service';
       }),
       inject: [graphQLConfig.KEY],
     }),
+    LineupModule,
   ],
   providers: [AppService, AppResolver],
 })
