@@ -28,6 +28,6 @@ export const toPlayer = (player: PlayerDto): Player => {
     role,
     country,
     substitute: isSub,
-    team: null
+    team: null,
   };
 };

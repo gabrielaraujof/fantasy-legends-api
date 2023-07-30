@@ -25,6 +25,6 @@ export class Player {
   @Field()
   substitute: boolean;
 
-  @Field((type) => Team, { nullable: true})
+  @Field((type) => Team, { nullable: true })
   team: Team | null;
 }
