@@ -1,10 +1,8 @@
 import { Field, ID, ObjectType } from '@nestjs/graphql';
 
-import { Team } from './team';
-
 @ObjectType()
 export class Player {
-  @Field((type) => ID)
+  @Field(() => ID)
   id: string;
 
   @Field()
@@ -25,6 +23,6 @@ export class Player {
   @Field()
   substitute: boolean;
 
-  @Field((type) => Team, { nullable: true })
-  team: Team | null;
+  @Field()
+  teamId: string;
 }

@@ -18,8 +18,16 @@ export interface PlayerDto {
 }
 
 export const toPlayer = (player: PlayerDto): Player => {
-  const { id, firstName, lastName, summonerName, role, country, isSub } =
-    player;
+  const {
+    id,
+    firstName,
+    lastName,
+    summonerName,
+    role,
+    country,
+    isSub,
+    teamId,
+  } = player;
   return {
     id,
     firstName,
@@ -28,6 +36,6 @@ export const toPlayer = (player: PlayerDto): Player => {
     role,
     country,
     substitute: isSub,
-    team: null,
+    teamId,
   };
 };
