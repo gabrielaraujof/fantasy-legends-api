@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 
-import { UUID, randomUUID } from 'crypto';
+import { randomUUID } from 'crypto';
 import { Observable, of } from 'rxjs';
 
 import { PlayerDto } from './dtos/player.dto';
@@ -19,7 +19,7 @@ export class PlayerService {
         role: 'top',
         country: 'BR',
         isSub: false,
-        teamId: 'fakeId',
+        teamId: '1',
       },
       {
         id: randomUUID(),
@@ -31,7 +31,7 @@ export class PlayerService {
         role: 'jungle',
         country: 'KR',
         isSub: false,
-        teamId: 'fakeId',
+        teamId: '1',
       },
       {
         id: randomUUID(),
@@ -43,7 +43,7 @@ export class PlayerService {
         role: 'middle',
         country: 'BR',
         isSub: false,
-        teamId: 'fakeId',
+        teamId: '1',
       },
       {
         id: randomUUID(),
@@ -55,7 +55,7 @@ export class PlayerService {
         role: 'bottom',
         country: 'KR',
         isSub: false,
-        teamId: 'fakeId',
+        teamId: '1',
       },
       {
         id: randomUUID(),
@@ -67,7 +67,7 @@ export class PlayerService {
         role: 'support',
         country: 'BR',
         isSub: false,
-        teamId: 'fakeId',
+        teamId: '1',
       },
       {
         id: randomUUID(),
@@ -79,7 +79,7 @@ export class PlayerService {
         role: 'top',
         country: 'BR',
         isSub: true,
-        teamId: 'fakeId',
+        teamId: '1',
       },
       {
         id: randomUUID(),
@@ -91,12 +91,12 @@ export class PlayerService {
         role: 'coach',
         country: 'BR',
         isSub: false,
-        teamId: 'fakeId',
+        teamId: '1',
       },
     ]);
   }
 
-  getOne(id: UUID): Observable<PlayerDto> {
+  getOne(): Observable<PlayerDto> {
     return of({
       id: randomUUID(),
       createdAt: new Date(),
@@ -107,7 +107,7 @@ export class PlayerService {
       role: 'top',
       country: 'BR',
       isSub: false,
-      teamId: 'fakeId',
+      teamId: '1',
     });
   }
 }

@@ -1,21 +1,18 @@
 import { Test, TestingModule } from '@nestjs/testing';
 
-import {
-  describe,
-  beforeEach,
-  test,
-  expect,
-  vitest,
-  Vitest,
-  Mock,
-} from 'vitest';
+import { describe, beforeEach, test, expect, vitest, Mock } from 'vitest';
 
 import { PlayerResolver } from './player.resolver';
 import { PlayerService } from '../services';
 import { of } from 'rxjs';
+import { TeamLoaderToken } from '../loaders';
 
 const PlayerServiceMock = {
   getAll: vitest.fn(),
+};
+
+const TeamLoaderMock = {
+  load: vitest.fn(),
 };
 
 describe('PlayerResolver', () => {
@@ -27,6 +24,7 @@ describe('PlayerResolver', () => {
       providers: [
         PlayerResolver,
         { provide: PlayerService, useValue: PlayerServiceMock },
+        { provide: TeamLoaderToken, useValue: TeamLoaderMock },
       ],
     }).compile();
 
